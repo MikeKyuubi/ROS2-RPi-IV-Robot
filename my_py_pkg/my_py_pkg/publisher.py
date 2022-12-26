@@ -7,14 +7,14 @@ from std_msgs.msg import Int16
 
 class MinimalPublisher(Node):
     def __init__(self):
-        super().__init__("simple_publisher")
+        super().__init__("simple_rpi_publisher")
         self.publisher_ = self.create_publisher(Int16, '/pub_topic', 10)
         timer_ = 0.1
         self.timer = self.create_timer(timer_, self.timer_callback)
         self.iterator = 0
         self.get_logger().info("Publisher has been started")
 
-    def timer_callback(self, msg):
+    def timer_callback(self):
         msg = Int16()
         msg.data = self.iterator
         self.publisher_.publish(msg)
