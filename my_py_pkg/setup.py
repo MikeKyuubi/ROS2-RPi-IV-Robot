@@ -13,15 +13,16 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='shiro',
-    maintainer_email='shiro@todo.todo',
+    maintainer='ubuntu',
+    maintainer_email='ubuntu@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "publisher_pi = my_py_pkg.publisher:main",
-            "subscriber_pi = my_py_pkg.subscriber:main"
+            "publisher_node = my_py_pkg.publisher:main",
+            "robot_video_node = my_py_pkg.camera:main",
+            "cmd_to_pwm_driver_node = my_py_pkg.cmd_to_pwm_driver:main"
         ],
     },
 )
